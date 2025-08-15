@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
+src/example.py
+
+def example():
+    return True
+tests/test_example.py
+
+from example import example
+
+def test_example():
+    assert example()

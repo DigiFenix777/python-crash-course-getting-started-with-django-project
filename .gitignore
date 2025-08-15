@@ -1,0 +1,47 @@
+# OS
+.DS_Store
+
+# Editors/IDE
+.idea/
+.vscode/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+.dist-info/
+.eggs/
+build/
+dist/
+wheels/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Type checking / linters
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Env & secrets
+.env
+.env.*
+*.pem
+*.key
