@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # My apps.
     'learning_logs',
     'pizzeria',
+    'meal_planner',
 
     # Default Django apps.
     'django.contrib.admin',
