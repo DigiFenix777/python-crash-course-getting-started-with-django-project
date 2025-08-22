@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField()),
                 ('date_added', models.DateTimeField(auto_now_add=True)),
-                ('topic', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pizzeria.pizza')),
+                ('topic', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pizzas.pizza')),
             ],
             options={
                 'verbose_name_plural': 'entries',

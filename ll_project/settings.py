@@ -48,8 +48,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My apps.
     'learning_logs',
-    'pizzeria',
-    'meal_planner',
+    'pizzas',
+    # 'meal_planner',
 
     # Default Django apps.
     'django.contrib.admin',
