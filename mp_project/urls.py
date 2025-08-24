@@ -1,8 +1,8 @@
 """
-URL configuration for ll_project project.
+mp_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -18,9 +18,5 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('learning_logs/', include('learning_logs.urls')),
-    path('pizzas/', include('pizzas.urls')),
-    path('meal_plans/', include('meal_plans.urls')),
-    path('blog/', include('blog.urls')),
+    path('', include('meal_plans.urls')),
 ]
