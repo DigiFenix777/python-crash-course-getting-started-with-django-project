@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import environ
+from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
 
 BASE_DIR = Path(__file__).resolve().parent.parent  # folder that contains manage.py
 
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
     'pizzas',
     'meal_plans',
     'blogs',
+    'accounts',
 
     # Default Django apps.
     'django.contrib.admin',
@@ -142,3 +144,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# My settings.
+LOGIN_URL = "accounts:login"
+LOGIN_REDIRECT_URL = 'learning_logs:index'
+LOGOUT_REDIRECT_URL = 'learning_logs:index'
