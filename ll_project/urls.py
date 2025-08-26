@@ -19,7 +19,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("accounts/", include(("accounts.urls", "accounts"), namespace="accounts")),
+
+    # Custom accounts routes (e.g., register)
+    path("accounts/", include("accounts.urls")),
+    # Django's built-in auth (login/logout/password reset, etc.)
+    path("accounts/", include("django.contrib.auth.urls")),
+
     path("learning_logs/", include("learning_logs.urls")),
     path("pizzas/", include("pizzas.urls")),
     path("meal_plans/", include("meal_plans.urls")),
