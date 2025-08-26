@@ -1,9 +1,11 @@
 """Defines URL patterns for accounts."""
-from django.urls import path, include
+from django.urls import path
 from . import views
 
-app_name = "accounts"
+# app_name is harmless to keep; we're not namespacing the include above
+# app_name = "accounts"
+
 urlpatterns = [
     path("register/", views.register, name="register"),
-    path("", include("django.contrib.auth.urls")),  # namespaced auth: accounts:login/logout/...
+    # optional: path("", views.index, name="index"),
 ]

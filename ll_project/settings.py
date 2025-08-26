@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import environ
-from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent  # folder that contains manage.py
 
@@ -40,9 +40,6 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Moved to .env
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -78,7 +75,7 @@ ROOT_URLCONF = 'll_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "America/Denver"
 
 USE_I18N = True
 
@@ -146,6 +143,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings.
-LOGIN_URL = "accounts:login"
-LOGIN_REDIRECT_URL = 'learning_logs:index'
-LOGOUT_REDIRECT_URL = 'learning_logs:index'
+LOGIN_URL = "login"                             # built-in auth view name
+LOGIN_REDIRECT_URL = 'learning_logs:index'      # after successful login
+LOGOUT_REDIRECT_URL = 'learning_logs:index'     # after logout
