@@ -28,5 +28,5 @@ urlpatterns = [
     path("learning_logs/", include("learning_logs.urls")),
     path("pizzas/", include("pizzas.urls")),
     path("meal_plans/", include("meal_plans.urls")),
-    path("blog/", include("blog.urls")),
+    path("blogs/", include("blog.urls")),
 ]
