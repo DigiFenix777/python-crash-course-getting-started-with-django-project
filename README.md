@@ -1,10 +1,10 @@
 # 🌐 Learning Log & Multi-App Django Project
 
 <!-- 📛 Project Badges -->
-![Last Commit](https://img.shields.io/github/last-commit/DigiFenix777/python-crash-course-django-project)
-![Top Language](https://img.shields.io/github/languages/top/DigiFenix777/python-crash-course-django-project)
-![Repo Size](https://img.shields.io/github/repo-size/DigiFenix777/python-crash-course-django-project)
-![Issues](https://img.shields.io/github/issues/DigiFenix777/python-crash-course-django-project)
+![Last Commit](https://img.shields.io/github/last-commit/DigiFenix777/python-crash-course-getting-started-with-django-project)
+![Top Language](https://img.shields.io/github/languages/top/DigiFenix777/python-crash-course-getting-started-with-django-project)
+![Repo Size](https://img.shields.io/github/repo-size/DigiFenix777/python-crash-course-getting-started-with-django-project)
+![Issues](https://img.shields.io/github/issues/DigiFenix777/python-crash-course-getting-started-with-django-project)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
