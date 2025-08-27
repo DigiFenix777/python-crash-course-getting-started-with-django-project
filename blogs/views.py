@@ -1,5 +1,6 @@
-
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.http import Http404
 
 from .models import Blog, BlogPost
 from .forms import BlogForm, BlogPostForm
@@ -23,6 +24,7 @@ def blog(request, blog_id):
     context = {'blog': blog, 'posts': posts}
     return render(request, 'blogs/blog.html', context)
 
+@login_required
 def new_blog(request):
     """Page to new a new blog."""
     if request.method != 'POST':
@@ -39,9 +41,11 @@ def new_blog(request):
     context = {'form': form}
     return render(request, 'blogs/new_blog.html', context)
 
+@login_required
 def new_post(request, blog_id):
     """Page to create a new post."""
     blog = Blog.objects.get(id=blog_id)
+    check_blog_owner(blog, request.user)
 
     if request.method != 'POST':
         # No data submitted; create a blank form.
@@ -59,10 +63,12 @@ def new_post(request, blog_id):
     context = {'blog': blog, 'form': form}
     return render(request, 'blogs/new_post.html', context)
 
+@login_required
 def edit_post(request, post_id):
     """Page to edit an existing post."""
     post = BlogPost.objects.get(id=post_id)
     blog = post.blog
+    check_blog_owner(blog, request.user)
 
     if request.method != 'POST':
         # Initial request; pre-fill form with the current entry.
@@ -76,3 +82,12 @@ def edit_post(request, post_id):
 
     context = {'post': post, 'blog': blog, 'form': form}
     return render(request, 'blogs/edit_post.html', context)
+
+def check_blog_owner(blog, user):
+    """Make sure the currently logged-in user owns the blog that's
+    being requested
+
+    Raise Http404 error if the user does not own the blog.
+    """
+    if blog.owner != user:
+        raise Http404
